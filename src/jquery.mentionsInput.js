@@ -53,7 +53,7 @@
 
 
   var MentionsInput = function (settings) {
-
+  //underscore explanation for _.bindAll:
     _.bindAll(this, 'onInputBoxKeyDown', 'onInputBoxKeyPress', 'onInputBoxInput', 'onInputBoxClick', 'onInputBoxBlur', 'resetBuffer', 'getMentions', 'val');
 
     this.elmInputWrapper  = null;
@@ -67,7 +67,7 @@
 
     this.initialize.apply(this, arguments);
   };
-
+  //underscore explanation for  _.extend:
   _.extend(MentionsInput.prototype, {
 
     initialize : function(settings, domTarget) {
@@ -130,7 +130,7 @@
       // Append to wrapper
       elmMentionsOverlay.prependTo(elmWrapperBox);
     },
-
+  //underscore explanation for _doSearch:
     _doSearch: function(query) {
       var self = this;
 
@@ -161,14 +161,14 @@
     updateValues: function() {
       var self = this;
       var syntaxMessage = this.getInputBoxValue();
-
+  //underscore explanation for _.each:
       _.each(this.mentionsCollection, function (mention) {
         var textSyntax = self.settings.templates.mentionItemSyntax(mention);
         syntaxMessage = syntaxMessage.replace(mention.value, textSyntax);
       });
-
+  //underscore explanation for _.escape:
       var mentionText = _.escape( syntaxMessage );
-
+  //underscore explanation for _.each:
       _.each(this.mentionsCollection, function (mention) {
 
         var formattedMention = _.extend({}, mention, {value: _.escape( mention.value )});
@@ -270,7 +270,7 @@
       if (triggerCharIndex === 0) {
         currentDataQuery = this.inputBuffer.slice(triggerCharIndex + 1).join('');
         currentDataQuery = utils.rtrim(currentDataQuery);
-
+  //underscore explanation for  _.defer:
         _.defer(_.bind( this._doSearch , this, currentDataQuery));
       } else {
         this.hideAutoComplete();
@@ -295,6 +295,7 @@
         // to stay on the screen whenever backspace is pressed after a highlighed word. This is simply a hack
         // to force updateValues() to fire when backspace/delete is pressed in IE9.
         if (navigator.userAgent.indexOf("MSIE 9") > -1) {
+  //underscore explanation for  _.defer:
           _.defer( this.updateValues );
         }
 
@@ -308,11 +309,12 @@
           // Allow spaces when autcompleter is visible
           return;
         }
-
+  //underscore explanation for  _.defer:
         _.defer( this.resetBuffer );
       }
 
       if ( e.keyCode == KEY.RETURN ) {
+  //underscore explanation for  _.defer:
         _.defer( this.resetBuffer );
       }
 
@@ -369,7 +371,7 @@
 
     return this.each(function () {
       var instance = $.data(this, 'mentionsInput') || $.data(this, 'mentionsInput', new MentionsInput(settings, this));
-
+  //underscore explanation for _.isFunction:
       if (_.isFunction(instance[method])) {
         return instance[method].apply(this, Array.prototype.slice.call(outerArguments, 1));
       }
@@ -378,6 +380,7 @@
 
   // Exposing defaultAutocompleterProxy on jQuery-object
   $.fn.mentionsInput.defaultAutocompleterProxy = function () {
+  //underscore explanation for _.extend:
     _.extend(this, {
       initialize: function(mentionsInput, elmWrapperBox) {
         var self = this;
