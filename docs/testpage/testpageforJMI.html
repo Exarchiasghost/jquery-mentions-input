@@ -1,3 +1,4 @@
+<!doctype html>
 <hmtl>
 <head>
 <title>Test page for jquery mentions input</title>
@@ -12,12 +13,20 @@
 
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script>
   <script src='http://documentcloud.github.com/underscore/underscore-min.js' type='text/javascript'></script>
+  <script type='text/javascript'>
+	var rownumbers = 5;
+  </script>
   
 </head>
 
 <body>
 <!-- my primary goal for this test page is to make a fake json "data base" for testing purposes. After that i will try to
 insert some flexibility to the source code, especialy in the initiations -->
+<p>Initialising the data structure:<br/></p>
+<form>
+<div>I have a raw file to check: <input type="checkbox" name="rawfile" value="" onchange="iWantRawFile(this.form)"><br/></div>
+<p>How many entries you would like to check? <br/><input type="text" name="entrynumbers" onchange="GenerateRows(this.form)"></p>	
+</form>
   <p>Ready!!! Just kidding :-) </p>
   <textarea class='mention' placeholder='Try to mention the people that you have in the JSON'></textarea>
   
