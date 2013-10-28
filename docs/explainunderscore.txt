@@ -1,0 +1,15 @@
+  //underscore explanation for _.template: Compiles JavaScript templates into functions that can be evaluated for rendering. Useful for rendering complicated bits of HTML from JSON data sources. Template functions can both interpolate variables, using <%= … %>, as well as execute arbitrary JavaScript code, with <% … %>. If you wish to interpolate a value, and have it be HTML-escaped, use <%- … %> When you evaluate a template function, pass in a data object that has properties corresponding to the template's free variables. If you're writing a one-off, you can pass the data object as the second parameter to template in order to render immediately instead of returning a template function. The settings argument should be a hash containing any _.templateSettings that should be overridden.
+
+  //underscore explanation for _.bindAll:
+
+  //underscore explanation for  _.extend: Copy all of the properties in the source objects over to the destination object, and return the destination object. It's in-order, so the last source will override properties of the same name in previous arguments.
+
+  //underscore explanation for _doSearch:
+
+  //underscore explanation for _.each:
+
+  //underscore explanation for _.escape:
+
+  //underscore explanation for  _.defer:
+
+  //underscore explanation for _.isFunction: Returns true if object is a Function.
