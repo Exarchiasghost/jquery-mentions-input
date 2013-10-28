@@ -23,6 +23,7 @@
     insertSpaceAfterMention   : false,
     resetOnInitialize         : false,
     templates                 : {
+  //underscore explanation for _.template:
       wrapper                 : _.template('<div class="mentions-input-box"></div>'),
       mentionsOverlay         : _.template('<div class="mentions"><div></div></div>'),
       mentionItemSyntax       : _.template('@[<%= value %>](<%= type %>:<%= id %>)'),
