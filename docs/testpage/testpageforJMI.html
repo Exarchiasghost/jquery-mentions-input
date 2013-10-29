@@ -16,16 +16,30 @@
   <script type='text/javascript'>
 	var rownumbers = 5;
 	var insertrawbox = "";
+	var jsJMIvar = "https://raw.github.com/podio/jquery-mentions-input/1.5/src/jquery.mentionsInput.js";
+	
+	
 	function iWantRawFile(form) { 
-	if(form.rawfile.checked){
-	insertrawbox = 'Insert the URL of your Raw Jquery Mentions Input js file <br/> <input type="text" name="insertraw" onchange="GenerateRows(this.form)"><br/>';
-	} else {
-	insertrawbox = "We will use the original";
+		if(form.rawfile.checked){
+	insertrawbox = 'Insert the URL of your Raw Jquery Mentions Input js file <br/> <input type="text" name="insertraw" onchange="InsertJSraw(this.form)"><br/>' + jsJMIvar;
+		} else {
+	insertrawbox = "We will use the original" + jsJMIvar;
+	jsJMIvar = "https://raw.github.com/podio/jquery-mentions-input/1.5/src/jquery.mentionsInput.js";
+	
+	
 	};
 	document.getElementById('rawdiv').innerHTML=insertrawbox;
 	
 	};
+	
+	// Generates the number of the inserts for the fake JSON data structure
 	function GenerateRows(form) {};
+
+	//takes the value from insertraw input-text form and gives this value to the global jsJMIvar variable
+	function InsertJSraw(form) {
+	jsJMIvar = form.insertraw.value;
+	
+	};
   </script>
   
 </head>
