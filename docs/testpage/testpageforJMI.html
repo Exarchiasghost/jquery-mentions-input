@@ -21,10 +21,13 @@
 	
 	function iWantRawFile(form) { 
 		if(form.rawfile.checked){
-	insertrawbox = 'Insert the URL of your Raw Jquery Mentions Input js file <br/> <input type="text" name="insertraw" onchange="InsertJSraw(this.form)"><br/>' + jsJMIvar;
+	//if rawfile is checked then it opend the 
+	insertrawbox = 'Insert the URL of your Raw Jquery Mentions Input js file <br/> <input type="text" name="insertraw" onchange="InsertJSraw(this.form)"><br/>';
 		} else {
-	insertrawbox = "We will use the original" + jsJMIvar;
+	//if  rawfile is not checked it uses the original src/jquery.mentionsInput.js file and after this prints the message
 	jsJMIvar = "https://raw.github.com/podio/jquery-mentions-input/1.5/src/jquery.mentionsInput.js";
+	insertrawbox = "We will use the original <br/>" + jsJMIvar;
+	
 	
 	
 	};
